@@ -20,7 +20,7 @@ def add_item(item_name, price, quantity = 1)
 end
 
 def items
-  @items.flatten
+  @@items.flatten
 end
 
 def apply_discount
