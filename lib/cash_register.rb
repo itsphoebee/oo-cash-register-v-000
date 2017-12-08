@@ -14,7 +14,7 @@ def total
 end
 
 def add_item(item_name, price, quantity = 1)
-  @items << item_name.split * quantity
+  @@items << item_name.split * quantity
   @total = @total + price * quantity
   @last_transaction = price * quantity
 end
