@@ -2,11 +2,11 @@ require'pry'
 
 class CashRegister
 attr_accessor :total, :discount, :items
-@@items
 
 def initialize(discount = 0)
   @total = 0
   @discount = discount
+  @items = []
 end
 
 def total
@@ -14,13 +14,13 @@ def total
 end
 
 def add_item(item_name, price, quantity = 1)
-  @@items << item_name.split * quantity
+  @items << item_name.split * quantity
   @total = @total + price * quantity
   @last_transaction = price * quantity
 end
 
 def items
-  @@items.flatten
+  @items.flatten
 end
 
 def apply_discount
